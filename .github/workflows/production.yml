@@ -63,7 +63,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: hameed1117/qr_code_api:${{ github.sha }}
+          tags: khadhar17/qr_code_api:${{ github.sha }}
           platforms: linux/amd64,linux/arm64
-          cache-from: type=registry,ref=hameed1117/qr_code_api:cache
+          cache-from: type=registry,ref=khadhar17/qr_code_api:cache
           cache-to: type=inline,mode=max
