@@ -1,37 +1,50 @@
-# RestAPI for Creating QR Codes
+RestAPI for Creating QR Codes - Completed Assignment
+What Has Been Done
+In this assignment, I successfully fixed several errors in the broken QR code API application. The project now passes all tests and is functioning correctly. Here's a summary of the completed steps:
 
-For this assignment I want you to go over the videos and I've created a X number of errors in the code that you will have to find and fix them.  You should keep running the tests and read the error and try to understand what it mean.  The purpose of this assignment is to get you accustomed to running the project and following the steps that the program uses to process requests.
+✅ Cloned the broken repository and set up the development environment
+✅ Fixed multiple code issues, including:
 
-Here is my repo with the working code: [https://github.com/kaw393939/fastapi_spring2024](https://github.com/kaw393939/fastapi_spring2024)
-
-You can get this repo working with the install instructions below.  The assignment repo will not work because its filled with broken code.
-
-**To submit this assignment, you should make your own repository and add the remote to git and then push your fixed code to your own repo.** 
-
-## Grading
-
-You will only get 100 if the entire QR program passes GitHub actions, so you will need to update the production.yml file to have your info and setup your environment variables on the repository.
-
-# Instructor Videos
-* [Rest API Project Overview](https://youtu.be/xEcBKSSXxhQ)
-* [QR Code Overview for Assignment](https://youtu.be/E6b9VkQpQ-U)
+Fixed function name in qr_service.py (corrected delete_qr_cde to delete_qr_code)
+Fixed route paths in oauth.py (corrected /tokn to /token)
+Fixed route paths in qr_code.py (corrected /qr-coes/ to /qr-codes/)
+Fixed parameter names (qr_fileame to qr_filename)
+Fixed field names in schema (ul to url and mssage to message)
+Fixed admin password in config (ecret to secret)
+Fixed typos in functions in common.py
+Fixed router name in main.py (ruter to router)
 
 
-## Optional but extremely helpful:
+✅ Created the QR codes directory with proper permissions
+✅ Ran tests locally to verify fixes - all tests now pass!
+✅ Set up Docker and tested the application in a containerized environment
+✅ Created a GitHub repository at https://github.com/Hameed1117/Broken_Qr_Code_Assignment
+✅ Updated the GitHub Actions workflow file to run tests and build Docker images
+✅ Set up Docker Hub repository at https://hub.docker.com/repository/docker/khadhar17/qr_code_api
+✅ Set up GitHub Secrets for Docker Hub authentication
 
-1. [Best Series to Learn Bash Scripting Seriously learn this!!!](https://www.youtube.com/playlist?list=PLIhvC56v63IKioClkSNDjW7iz-6TFvLwS)
+How to Run the Application
 
-2.  [Listen to someone else explain FastAPI and go through a project](https://www.youtube.com/watch?v=cbASjoZZGIw)
+Clone this repository
+Create a virtual environment: python3 -m venv venv
+Activate the virtual environment: source venv/bin/activate
+Install requirements: pip install -r requirements.txt
+Create QR codes directory: mkdir -p qr_codes && chmod 777 qr_codes
+Run tests: pytest
+Start the application: docker-compose up --build
+Visit the API documentation at http://localhost/docs
+Use the Swagger UI to test the API endpoints:
 
-# Install
-1. Clone
-2. Make virtual environment:  python3 -m venv venv
-3. Activate virtual environment: source venv/bin/activate
-4. Install requirements: pip install -r requirements.txt
-5. **IMPORTANT** run: mkdir qr_codes to create a qr codes directory to save in, permissions will be messed up and the docker container won't be able to write to the qr_codes directory if you don't.
-6. Note: make sure docker is started
-7. run pytest locally to check that it works locally
-8. Start the app with docker compose up --build
-9. Goto http://localhost/docs to view openapi spec documentation
-10. Click "authorize" input username: admin password: secret
-11. Test making,  retrieving, and deleting QR codes on the spec page.
+Authorize with username: admin and password: secret
+Create, list, and delete QR codes
+
+
+
+CI/CD Pipeline
+The application uses GitHub Actions for continuous integration and continuous deployment. The workflow:
+
+Runs all tests to ensure code correctness
+Builds a Docker image
+Pushes the image to Docker Hub
+
+The successful pipeline execution validates that all code issues have been fixed and the application is working as expected.
